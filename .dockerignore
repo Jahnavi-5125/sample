@@ -1,10 +1,10 @@
 .azure-cmd/
 .dockerignore
-.git/
+git/
 .github/
-.gitignore
+gitignore
 .venv/
-.vscode/
+vscode/
 **/__pycache__/
 docker-compose.yml
 Dockerfile
@@ -15,3 +15,35 @@ README.md
 test/*
 TODO.txt
 .env
+
+# Python caches and tooling
+**/*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node/Next.js (frontend)
+**/node_modules/
+src/frontend/.next/
+src/frontend/.turbo/
+src/frontend/dist/
+src/frontend/build/
+src/frontend/.vercel/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Environment files (keep example)
+.env.*
+!.env.example
+
+# Docker
+docker/*.log

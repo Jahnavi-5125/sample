@@ -128,7 +128,7 @@ patsy==1.0.1
 pdfkit==1.0.0
 pdfminer.six==20250506
 pdfplumber==0.11.7
-pdftopng==0.2.4
+# pdftopng
 peewee==3.18.1
 pexpect==4.9.0
 pillow==11.3.0

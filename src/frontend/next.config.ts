@@ -1,6 +1,9 @@
 import type { NextConfig } from 'next';
 const path = require('path');
 
+const isDev = process.env.NODE_ENV !== 'production';
+const enableStaticExport = !isDev && (process.env.NEXT_EXPORT === '1' || process.env.NEXT_EXPORT === 'true');
+
 const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -13,7 +16,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: false,
-  output: 'export',
+  ...(enableStaticExport ? { output: 'export' } : {}),
 };
 
 export default nextConfig;

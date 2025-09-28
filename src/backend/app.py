@@ -11,6 +11,7 @@ from src.backend.api.session import router as session_router
 from src.backend.api.user import router as user_router
 from src.backend.api.chat import router as chat_router
 import os
+from src.backend.api.customize import router as customize_router
 
 stock_agent = StockAnalysisAgent()
 
@@ -34,11 +35,11 @@ app.include_router(auth_router)
 app.include_router(session_router)
 app.include_router(user_router)
 app.include_router(chat_router)
+app.include_router(customize_router)
 
 @app.get("/", response_class=HTMLResponse)
 async def get():
     return FileResponse(path="out/index.html")
-
 @app.get("/{url:path}")
 async def chat_redirect(url: str):
     try:
